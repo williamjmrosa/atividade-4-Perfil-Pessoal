@@ -111,6 +111,13 @@ footer {
     border-radius: 0 0 0.5rem 0.5rem;
 }
 
+@media (max-width: 1150px) {
+    #sobreMim{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 /* Título Padrão das Seções */
 .corpo>section>h2 {
     grid-column: 1/-1;
