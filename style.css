@@ -1,234 +1,209 @@
-/* Defina variáveis de cor no início para facilitar a manutenção */
+/* =============== GERAL =============== */
+
+/* Variáveis de Cor */
 :root {
     --cor-fundo: #f4f7f5;
     --cor-card: #ffffff;
     --cor-texto-principal: #333333;
     --cor-texto-secundario: #555555;
-    --cor-destaque: #4A90E2; /* Um azul como cor de destaque */
-    --sombra-suave: 2px  4px 12px rgba(0, 0, 0, 0.08);
+    --cor-destaque: #4A90E2;
+    --sombra-suave: 2px 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Estilos Globais do Body */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Aplicando a nova fonte e cores */
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--cor-fundo);
     color: var(--cor-texto-principal);
 }
 
-/* Aplicando sombra e cores suaves nos cards */
-#sobreMim, #habilidades, #contato, #projetos {
-    width: 100%; /* Deixe 100% para o grid controlar */
-    background-color: var(--cor-card);
-    border-radius: 8px; /* Bordas um pouco mais arredondadas */
-    padding: 1.5rem;
-    display: grid;
-    gap: 1.5rem;
-    box-shadow: var(--sombra-suave);
-}
-/* Formatação geral da lista do cabecalho */
-.cabecalho ul{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    list-style: none;
-    text-align: center;   
+* {
+    box-sizing: border-box;
 }
 
-/* Formato geral do grid principal */
-.container{
+/* =============== LAYOUT =============== */
+
+/* Container Principal */
+.container {
     box-sizing: border-box;
-    width: 100%;
+    width: 80%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    
 }
 
-/* Formato geral da seção de redes sociais */
-aside{
+/* Corpo Principal (Main) */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-fundo);
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho ul {
+    list-style: none;
+    text-align: center;
+}
+
+.cabecalho ul li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+/* Barra Lateral (Aside) */
+aside {
     background-color: #555555;
+    border-radius: 0.5rem 0.5rem 0 0;
     color: #ffffff;
     padding: 1rem;
     margin: 0;
     box-shadow: var(--sombra-suave);
 }
 
-/* Formato do h3 da seção de redes sociais */
-aside h3{
-    text-align: center;
-}
-/* Formato geral da lista de redes sociais */
-aside ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-/* Formato geral da li da lista de redes sociais */
-aside ul li{
-    margin-bottom: 0.5rem;
-    
-}
-/* Formato geral dos links da lista de redes sociais */
-aside ul li a{
-    text-decoration: none;
-    font-weight: bold;
-    color: #000000;
-}
-/* Formato geral do corpo(main) */
-main{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    gap: 1rem;
-}
-
-/* Formato menu */
-.menu ul li a{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #000000;
-
-}
-/* Formato geral da seção de sobre mim */
-#sobreMim{
-    grid-template-columns: 4fr 8fr;
-    
-}
-/* Formato geral da h2 nas sections no corpo(main) */
-.corpo > section > h2{
-    grid-column: 1/-1;
-    text-align: center;
-}
-/* Formato geral da imagem na seção de sobre mim */
-#sobreMim > img{
-    margin-left: 0.6rem;
-    width: 100%;
-}
-/* Formato geral da div informacoes na seção de sobre mim */
-.informacoes{
-    background-color: #acabab;
-    color: #ffffff;
-    box-shadow: var(--sombra-suave);
-    border-radius: 0.5rem;
-    padding: 1rem
-}
-/* Formato geral dos parágrafos da div informacoes na seção de sobre mim */
-.informacoes p{
-    margin-bottom: 0.2rem;
-    padding: 0;
-    margin-top: 0.3rem;
-    font-size: 1.2rem;
-
-}
-/* Formato do rodapé */
-footer{
+/* Rodapé */
+footer {
     background-color: #FFFFFF;
     border-radius: 0 0.5rem 0.5rem 0;
     padding: 1rem;
     text-align: center;
     margin-top: 1rem;
+    width: 100%;
 }
-/* Formato da seção de habilidades */
-#habilidades{
+
+/* =============== FIM DO LAYOUT =============== */
+
+/* =============== SEÇÕES E CARDS =============== */
+
+/* Estilo Padrão dos Cards de Seção */
+#sobreMim,
+#habilidades,
+#contato,
+#projetos {
+    width: 100%;
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    box-shadow: var(--sombra-suave);
+}
+
+#sobreMim{
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Título Padrão das Seções */
+.corpo>section>h2 {
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+/* --- Seção: Sobre Mim --- */
+#sobreMim {
+    grid-template-columns: 4fr 8fr;
+    gap: 0.1;
+
+}
+
+#sobreMim img {
+    margin-left: 0.6rem;
+    width: clamp(40px, 80vw, 200px);
+}
+
+.fotoPerfil{
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.informacoes {
+    background-color: #acabab;
+    color: #ffffff;
+    box-shadow: var(--sombra-suave);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.informacoes p {
+    margin-bottom: 0.2rem;
+    padding: 0;
+    margin-top: 0.3rem;
+    font-size: 1.2rem;
+}
+
+/* --- Seção: Habilidades --- */
+#habilidades {
     display: grid;
     grid-template-columns: 1fr;
     text-align: center;
-
 }
-/* Formato geral da lista de habilidades */
-#habilidades > ul {
+
+#habilidades>ul {
     list-style: none;
     font-weight: bold;
     font-size: larger;
     padding: 0;
 }
 
-
-/* Formato da lista de habilidades */
-#habilidades ul > li > ul{
+#habilidades ul>li>ul {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 0;
-}  
-/* Formato dos itens de habilidade */
- .habilidade-item {
-    list-style: none;
+}
+
+/* --- Seção: Projetos --- */
+.projeto {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem; /* Espaço entre o ícone e o texto */
-    font-size: 0.9rem; /* Texto um pouco menor */
-    font-weight: normal;
-    color: var(--cor-texto-secundario);
+    gap: 0.5rem;
 }
 
-/* Formato do icone */
-.habilidade-item::before {
-    content: "";
-    display: block; /* Mude para block */
-    
-    /* Tamanho responsivo usando clamp() */
-    width: clamp(48px, 80vw, 128px);
-    height: clamp(48px, 80vw, 128px);
-
-    background-image: var(--bg-icon); /* Variável para o ícone */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.projeto h3 {
+    width: 100%;
+    text-align: center;
 }
 
-/* Agora, apenas definimos a imagem de cada um deles */
-#html::before {
-    --bg-icon: url(icon/icons8-html5-96.png);
+.descricaoProjeto {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra-suave);
+    background-color: #d6d9d7;
 }
 
-#css::before {
-    --bg-icon: url(icon/icons8-css3-96.png);
+.projeto img {
+    width: 100%;    
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra-suave);
 }
 
-#js::before {
-    --bg-icon: url(icon/icons8-javascript-96.png);
-}
-
-#php::before {
-    --bg-icon: url(icon/icons8-php-96.png);
-}
-
-#java::before {
-    --bg-icon: url(icon/icons8-java-96.png);
-}
-
-#mysql::before {
-    --bg-icon: url(icon/icons8-mysql-96.png);
-}
-
-#bootstrap::before {
-    --bg-icon: url(icon/icons8-bootstrap-96.png);
-}
-
-#jquery::before {
-    --bg-icon: url(icon/icons8-jquery-96.svg);
-}
-
-#android::before {
-    --bg-icon: url(icon/icons8-android-96.png);
-}
-
-/** Contato */
-#contato{
+/* --- Seção: Contato --- */
+#contato {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
@@ -238,21 +213,88 @@ footer{
     margin: 0;
 }
 
-/** Limpa o link de contato */
-#contato a{
+#contato h2 {
+    grid-column: 1/-1;
+    text-align: center
+}
+
+#contato a {
     text-decoration: none;
     padding: 0;
     color: #000000;
 }
 
-/** Faz o h2 ocupar todas as colunas da row de contato */
-#contato h2{
-    grid-column: 1/-1;
-    text-align: center
+/* =============== COMPONENTES =============== */
+
+/* --- Menu de Navegação --- */
+.menu ul li a {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #000000;
 }
 
-/** Icone de contato  */
-#contato a::before{
+/* --- Redes Sociais --- */
+aside h3 {
+    text-align: center;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+aside ul li {
+    margin-bottom: 0.5rem;
+}
+
+aside ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* --- Itens de Habilidade --- */
+.habilidade-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: var(--cor-texto-secundario);
+}
+
+.habilidade-item::before {
+    content: "";
+    display: block;
+    width: clamp(48px, 80vw, 128px);
+    height: clamp(48px, 80vw, 128px);
+    background-image: var(--bg-icon);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ícones de Habilidades */
+#html::before { --bg-icon: url(icon/icons8-html5-96.png); }
+#css::before { --bg-icon: url(icon/icons8-css3-96.png); }
+#js::before { --bg-icon: url(icon/icons8-javascript-96.png); }
+#php::before { --bg-icon: url(icon/icons8-php-96.png); }
+#java::before { --bg-icon: url(icon/icons8-java-96.png); }
+#mysql::before { --bg-icon: url(icon/icons8-mysql-96.png); }
+#bootstrap::before { --bg-icon: url(icon/icons8-bootstrap-96.png); }
+#jquery::before { --bg-icon: url(icon/icons8-jquery-96.svg); }
+#android::before { --bg-icon: url(icon/icons8-android-96.png); }
+
+/* --- Ícones de Contato --- */
+#contato a::before {
     content: "";
     display: inline-block;
     width: clamp(48px, 80vw, 60px);
@@ -261,42 +303,32 @@ footer{
     background-repeat: no-repeat;
     background-image: var(--bg-icone);
     margin: 0;
-
-}
-/** Definimos uma variável para o icone de cada link de contato */
-#telefone::before{
-    --bg-icone: url(icon/whatsapp.png);
 }
 
-#email::before{
-    --bg-icone: url(icon/email.png);
-}
+#telefone::before { --bg-icone: url(icon/whatsapp.png); }
+#email::before { --bg-icone: url(icon/email.png); }
+#github::before { --bg-icone: url(icon/github.png); }
+#linkedin::before { --bg-icone: url(icon/icons8-linkedin-240.png); }
 
-#github::before{
-    --bg-icone: url(icon/github.png);
-}
+/* =============== EFEITOS E TRANSIÇÕES =============== */
 
-#linkedin::before{
-    --bg-icone: url(icon/icons8-linkedin-240.png);
-}
-
-/* Efeito de hover nos links do menu e redes sociais */
+/* Efeito Hover nos Links */
 .menu a,
 .redesSociais a {
-    transition: color 0.6s ease; /* Transição suave de cor */
+    transition: color 0.6s ease;
 }
 
 .menu a:hover,
 .redesSociais a:hover {
-    color: var(--cor-destaque); /* Muda para a cor de destaque no hover */
+    color: var(--cor-destaque);
 }
 
-/* Efeito sutil de levantar o card de habilidade */
+/* Efeito Hover nos Itens de Habilidade */
 .habilidade-item {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .habilidade-item:hover {
-    transform: translateY(-5px); /* Move o item 5px para cima */
-    color: var(--cor-texto-principal); /* Deixa o texto mais escuro */
+    transform: translateY(-5px);
+    color: var(--cor-texto-principal);
 }
