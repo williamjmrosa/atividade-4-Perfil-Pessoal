@@ -107,6 +107,29 @@ footer {
     box-shadow: var(--sombra-suave);
 }
 
+@media (max-width: 800px) {
+    #sobreMim,
+    #habilidades,
+    #contato,
+    #projetos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projeto{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.fotoPerfil img {
+    width: clamp(40px, 100vw, 800px);
+    height: clamp(40px, 100vw, 200px);
+    border: 4px solid #4A90E2;
+    object-fit: cover;
+    border-radius: 100%; 
+}
+
 #sobreMim{
     border-radius: 0 0 0.5rem 0.5rem;
 }
@@ -126,7 +149,7 @@ footer {
 
 /* --- Seção: Sobre Mim --- */
 #sobreMim {
-    grid-template-columns: 4fr 8fr;
+    grid-template-columns: 5fr 5fr;
     gap: 0.1;
 
 }
@@ -195,15 +218,22 @@ footer {
 }
 
 .descricaoProjeto {
-    width: 100%;
+    width: 50%;
     padding: 2rem;
+    margin: auto;
     border-radius: 0.5rem;
     box-shadow: var(--sombra-suave);
     background-color: #d6d9d7;
 }
 
+@media (max-width: 800px) {
+    .descricaoProjeto {
+        width: 100%;
+    }
+}
+
 .projeto img {
-    width: 100%;    
+    width: clamp(40px, 80vw, 500px);    
     margin: 0 auto;
     border-radius: 0.5rem;
     box-shadow: var(--sombra-suave);
@@ -218,6 +248,22 @@ footer {
     font-size: 1rem;
     gap: 0.5rem;
     margin: 0;
+}
+
+@media (max-width: 800px) {
+    #contato {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #contato h2{
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 #contato h2 {
