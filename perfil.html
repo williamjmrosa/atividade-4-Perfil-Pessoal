@@ -13,6 +13,7 @@
 
 <body>
     <header class="cabecalho">
+        <button class="menu-hamburguer" aria-label="Abrir menu">☰</button>
         <nav class="menu">
             <ul>
                 <li><a href="#sobreMim">Sobre Mim</a></li>
@@ -128,7 +129,13 @@
         </main>
     </div>
     <footer>&copy; 2025 William José de Moura da Rosa</footer>
-
+    <script>
+    const menuBtn = document.querySelector('.menu-hamburguer');
+    const menuNav = document.querySelector('.menu');
+    menuBtn.addEventListener('click', () => {
+        menuNav.classList.toggle('ativo');
+    });
+</script>
 
 </body>
 

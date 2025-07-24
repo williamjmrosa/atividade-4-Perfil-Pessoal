@@ -385,3 +385,36 @@ aside ul li a {
     transform: translateY(-5px);
     color: var(--cor-texto-principal);
 }
+
+/* =============== Menu Hamburguer =============== */
+
+.menu-hamburguer {
+    display: none;
+    background: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    position: fixed;
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: var(--cor-fundo);
+        left: 0;
+        top: 0;
+    }
+
+    .menu.ativo ul {
+        display: flex;
+    }
+
+    .menu-hamburguer {
+        display: block;
+        z-index: 100;
+    }
+}
