@@ -47,4 +47,4 @@ O projeto está organizado da seguinte forma:
 
 -----
 
-Este README dará a qualquer pessoa as informações necessárias para entender e rodar seu projeto facilmente.
+Este README dará a qualquer pessoa as informações necessárias para entender e rodar esse projeto facilmente.
